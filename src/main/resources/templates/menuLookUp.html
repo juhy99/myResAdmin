@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<style>
+	.col-md-7 {
+		width:100%;
+	}
+</style>
+<body>
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+<div class="wrapper">
+	<!-- aside.html 시작 -->
+	<div th:replace="fragment/aside :: aside"></div>
+	<!-- aside.html 끝 -->
+	<section class="content">
+		<div class="row" style="display: contents">
+			<div class="col-md-7" style="max-width: 100%;">
+				<article class="widget widget--tabbed">
+					<div class="tabs">
+						<div  style="position: absolute;
+                     height: 36px;
+                     padding-left: 52px;
+                     top: 11px;
+                      right: 0px;">
+							<input type="text" placeholder="메뉴 검색하기" id="msearch" style="    border: none;
+                        background-color: transparent;
+                        color: #e5e5e5;
+                        font-size: 14px;
+                        height: 36px;
+                        line-height: 36px;
+                        width: 355px;">
+							<label for="msearch" style="position: absolute;
+                        color: #e5e5e5;
+                        left: 18px;
+                        top: 6px;
+                        font-size: 22px;
+                        cursor: pointer;">
+								<i class="pe-7s-search" style="font-weight: bold;
+                           color: #9a9a9a;
+                           font-size: 22px;"></i>
+							</label>
+						</div>
+						<a href="menuLookUp/regMenu" class="btn blue small" style="margin: 0;
+                     position: absolute;
+                     top: 12px;
+                     right: 34px;
+                     font-size: 12px;
+                     margin-right: 19px;
+                     color: white;">메뉴 등록</a>
+						<input type="radio" name="t" id="tab1" checked>
+						<label for="tab1" class="tabs__tab" style="margin: 0">메뉴 리스트</label>
+
+						<div class="tabs__content" id="itemList">
+							<div class="tabs__content--1" style="width: 100%;"  v-for="dto in itemList">
+								<div class="media social_msg" style="display: flex;" >
+									<div class="media-body" style="    width: 735px; padding-top: 12px;" >
+										<p id="meIdx" style="display: none"> {{dto.meIdx}}</p>
+										<h4 class="media-heading social_msg__heading">{{dto.meName}}</h4>
+										<h2 class="media-heading social_msg__heading" style="font-size: 11px;     margin: 0;">{{dto.mePrice}}</h2>
+										<p class="social_msg__msg" style="padding-top: 13px;">{{dto.meContent}}</p>
+									</div>
+									<div style="width: 359px; padding-top: 10px;">
+										<div style="margin-left: auto;
+                                       width: 67px;
+                                       margin-right: 58px;">
+											<button class="btn cyan small" style="margin: 0; margin-bottom: 10px; color: #ffffff;
+                                       " type="button" onclick="sendit(this)">메뉴 수정</button>
+											<!--                                 <input type="hidden" name="_method" value="delete" />-->
+											<button onclick="deleteIt()"><a class="btn red small" style="margin: 0;color: white;
+                                       ">메뉴 삭제</a></button>
+										</div>
+									</div>
+								</div> <!-- /social-msg -->
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+</div>
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="amcharts/amcharts.js"></script>
+<script type="text/javascript" src="amcharts/serial.js"></script>
+<script type="text/javascript" src="amcharts/pie.js"></script>
+<script type="text/javascript" src="js/chart.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-us-aea-en.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="/js/menu_list.js"></script>
+<script src="/js/menu_delete.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+	function sendit(event){
+		let love = event.parentNode.parentNode.parentNode.childNodes[0].childNodes[0].textContent;
+		console.log(love);
+		location.href='menuModify/'+love;
+	}
+</script>
+</body>
+</html>

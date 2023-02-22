@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<body>
+
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+<div class="wrapper">
+
+	<!-- aside.html 시작 -->
+	<div th:replace="fragment/aside :: aside"></div>
+	<!-- aside.html 끝 -->
+
+	<section class="content">
+
+		<div class="row">
+			<form th:action="@{'/resNoticeWriteModify/' + ${notice.binIdx}}" method="post" style="width: 100%;">
+				<input type="hidden" name="resaBisName" th:value="${session.name}">
+				<input type="hidden" name="binIdx" th:value="${notice.binIdx}">
+				<div class="col-md-12">
+					<article class="widget">
+						<header class="widget__header">
+							<h3 class="widget__title">공지사항 수정</h3>
+
+						</header>
+
+						<div class="widget__content">
+							<input type="text" name="binTitle" class="input-text" th:value="${notice.binTitle}" style="padding-left: 12px;">
+
+							<textarea class="textarea" name="binContent" rows="6" th:text="${notice.binContent}" style="resize:none;padding-left: 12px; height: 500px;display: none"></textarea>
+
+							<div style="width: 100%;">
+								<div style="text-align: right;">
+									<!--								<a href="res_notice.html" class="btn cyan small" style="margin: 0;">뒤로가기</a>-->
+									<input type="hidden" name="_method" value="put" />
+									<button type="submit"><a class="btn red small" style="margin: 0;color: white">수정완료</a></button>
+								</div>
+							</div>
+						</div>
+
+					</article>
+				</div>
+			</form>
+		</div>
+	</section> <!-- /content -->
+</div> <!-- /wrapper -->
+
+<!--footer.html 시작-->
+<div th:replace="fragment/footer :: footer"></div>
+<!--footer.html 끝-->
+
+
+</body>
+</html>

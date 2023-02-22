@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<body>
+
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+	<div class="wrapper">
+
+		<!-- aside.html 시작 -->
+		<div th:replace="fragment/aside :: aside"></div>
+		<!-- aside.html 끝 -->
+
+		<section class="content">
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<article class="widget" style="">
+					<header class="widget__header">
+						<h3 class="widget__title">공지사항</h3>
+						
+					</header>
+
+					<div class="widget__content">
+						<div class="input-text" style="width: 100%;
+						font-size: 12px;
+						padding: 7px;
+						border: 1px solid #e5e5e5;
+						margin-bottom: 10px;
+						padding-left: 12px;" th:text="${notice.binTitle}"readonly="readonly"></div>
+
+<!--						<input readonly="readonly" class="input-text" th:text="${notice.binTitle}"  style="    padding-left: 12px;">-->
+
+						<textarea readonly="readonly" class="textarea" rows="6" th:text="${notice.binContent}" style="resize:none;padding-left: 12px; height: 500px;"></textarea>
+
+						<div style="width: 100%;">
+							<div style="text-align: right;display: flex;justify-content: flex-end;">
+								<a th:href="@{'/resNoticeWriteModify/' + ${notice.binIdx}}" class="btn cyan small" style="margin:0 4px 0 0;color: white;">수정하기</a>
+								<form th:action="@{'/resNoticeWrite/'+ ${notice.binIdx}}" method="post">
+									<input type="hidden" name="_method" value="delete" />
+									<button type="submit"><a class="btn red small" style="margin: 0;color: white">삭제하기</a></button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+				</article>
+			</div>
+		</div>
+
+	</section> <!-- /content -->
+	
+</div> <!-- /wrapper -->
+
+<!--footer.html 시작-->
+<div th:replace="fragment/footer :: footer"></div>
+<!--footer.html 끝-->
+
+
+</body>
+</html>

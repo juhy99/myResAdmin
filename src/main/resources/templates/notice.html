@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<body id="page-top">
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+<div class="wrapper">
+    <!-- aside.html 시작 -->
+    <div th:replace="fragment/aside :: aside"></div>
+    <!-- aside.html 끝 -->
+    <section class="content">
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <div class="container-fluid">
+                    <h1 class="h3 mb-2 text-gray-800" style="padding-bottom: 22px;
+                    font-weight: bold;">공지사항</h1>
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive" style="overflow: hidden">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                    <tr>
+                                        <th class="firstTh">번호</th>
+                                        <th class="secondTh">분류</th>
+                                        <th class="thirdTh">제목</th>
+                                        <th class="fourTh">작성자</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="itemList">
+                                    <tr v-for="dto in itemList">
+                                        <th class="firstTh">{{dto.noIdx}}</th>
+                                        <td class="secondTh">공지</td>
+                                        <td class="thirdTh"><a v-bind:href="`noticeReview/${dto.noIdx}`" style="text-decoration: none; color: #858796;">{{dto.noTitle}}</a></td>
+                                        <td class="fourTh">캐치테이블</td>
+                                    </tr>
+                                    </tbody>
+                                    <div id="showPage" class="card-header" style="display: none">
+                                        <i class="fas fa-table me-1"></i>
+                                        총 {{totalPages}}페이지 중 {{currentPage}}페이지
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer.html 시작-->
+<div th:replace="fragment/footer :: footer"></div>
+<!--footer.html 끝-->
+<script src="https://unpkg.com/vue@3"></script>
+<script src="/js/notice.js"></script>
+</body>
+</html>

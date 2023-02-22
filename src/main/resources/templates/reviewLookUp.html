@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<style>
+	.col-md-7 {
+		width:100%;
+	}
+</style>
+<body>
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+<div class="wrapper">
+	<!-- aside.html 시작 -->
+	<div th:replace="fragment/aside :: aside"></div>
+	<!-- aside.html 끝 -->
+	<section class="content">
+		<div class="row" style="display: contents">
+			<div class="col-md-7" style="max-width: 100%;">
+				<article class="widget widget--tabbed">
+					<div class="tabs">
+						<!-- <div class="number-entries">
+                            <input class="spinner" name="value" value="3" />
+                        </div> -->
+						<!-- <div  style="position: absolute;
+                        height: 36px;
+                        padding-left: 52px;
+                        top: 11px;
+                        right: 0px;">
+                            <input type="text" placeholder="리뷰 검색하기" id="msearch" style="    border: none;
+                            background-color: transparent;
+                            color: #e5e5e5;
+                            font-size: 14px;
+                            height: 36px;
+                            line-height: 36px;
+                            width: 280px;">
+                            <label for="msearch" style="position: absolute;
+                            color: #e5e5e5;
+                            left: 18px;
+                            top: 6px;
+                            font-size: 22px;
+                            cursor: pointer;">
+                                <i class="pe-7s-search" style="font-weight: bold;
+                                color: #9a9a9a;
+                                font-size: 22px;"></i>
+                            </label>
+                        </div> -->
+						<div class="review-select">
+							<select class="review-select-s">
+								<option>최신순</option>
+								<option>별점순</option>
+							</select>
+						</div>
+						<!-- <div class="select-dropdown">
+                            <select>
+                              <option value="Option 1">최신순</option>
+                              <option value="Option 2">별점순</option>
+                            </select>
+                        </div> -->
+						<input type="radio" name="t" id="tab1" checked>
+						<label for="tab1" class="tabs__tab" style="margin: 0;">전체후기</label>
+						<div class="tabs__content" id="itemList" style="overflow-x: hidden;">
+							<div class="tabs__content--1" v-for="dto in itemList">
+								<div class="media social_msg" >
+									<figure class="pull-left rounded-image social_msg__img" >
+										<img class="media-object" src="images/review_img.jpg" alt="user">
+									</figure>
+									<div class="media-body">
+										<h4 class="media-heading social_msg__heading">{{dto.revNick}}</h4>
+										<div class="__review-meta __review-meta--with-rating" style="width: 100%;">
+											<div class="__d-flex __v-center" style="justify-content: space-between;">
+												<a href="#" class="__rating __active" style="padding-bottom: 4px; text-decoration: none; color: black">{{dto.revScore}}</a>
+											</div>
+											<!--												<div class="__rating-detail __d-flex">-->
+											<!--													<div class="__item">맛 -->
+											<!--														<span>5.0</span>-->
+											<!--													</div>-->
+											<!--													<div class="__item">분위기 -->
+											<!--														<span>5.0</span>-->
+											<!--													</div>-->
+											<!--													<div class="__item">서비스 -->
+											<!--														<span>4.5</span>-->
+											<!--													</div>-->
+											<!--												</div>-->
+										</div>
+										<p class="social_msg__msg" style="    padding-top: 13px;">{{dto.revContent}}</p>
+										<p class="social_msg__msg" style="    padding-top: 13px;">등록날짜 : {{dto.regDate}}</p>
+									</div>
+								</div> <!-- /social-msg -->
+							</div> <!-- /tabs__content 1 -->
+
+						</div> <!-- /tabs__content CONTAINER -->
+						<div id="showPage" class="card-header" style="display: none">
+							<i class="fas fa-table me-1"></i>
+							총 {{totalPages}}페이지 중 {{currentPage}}페이지
+						</div>
+					</div> <!-- /widget__tabs -->
+				</article>
+			</div>
+		</div> <!-- /row -->
+	</section> <!-- /content -->
+</div> <!-- /wrapper -->
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="amcharts/amcharts.js"></script>
+<script type="text/javascript" src="amcharts/serial.js"></script>
+<script type="text/javascript" src="amcharts/pie.js"></script>
+<script type="text/javascript" src="js/chart.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-us-aea-en.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="/js/review_lookUp.js"></script>
+</body>
+</html>

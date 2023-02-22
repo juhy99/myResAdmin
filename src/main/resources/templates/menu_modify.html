@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<body>
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+	<div class="wrapper">
+		<!-- aside.html 시작 -->
+		<div th:replace="fragment/aside :: aside"></div>
+		<!-- aside.html 끝 -->
+		<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<article class="widget">
+					<header class="widget__header">
+						<h3 class="widget__title">메뉴 수정</h3>
+					</header>
+					<div class="widget__content">
+						<input type="text" class="input-text" id="meName" th:field="${api.meName}" readonly style="    padding-left: 12px;" />
+						<input type="text" class="input-text" id="mePrice" th:field="${api.mePrice}" style="    padding-left: 12px;" />
+						<textarea class="textarea" rows="6" id="meContent" th:text="${api.meContent}" style="    padding-left: 12px;"></textarea>
+						<div style="width: 100%;">
+							<div style="text-align: right;">
+								<a href="/menuLookUp" class="btn cyan small" style="margin: 0; color: white">뒤로가기</a>
+								<a id="menuMdfBtn" class="btn red small" style="margin: 0;color: white">수정완료</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+</div>
+<!--footer.html 시작-->
+<div th:replace="fragment/footer :: footer"></div>
+<!--footer.html 끝-->
+<script src="/js/menu_modify.js"></script>
+</body>
+</html>

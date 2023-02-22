@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org/">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<body>
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+<div class="wrapper">
+	<!-- aside.html 시작 -->
+	<div th:replace="fragment/aside :: aside"></div>
+	<!-- aside.html 끝 -->
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<article class="widget">
+					<header class="widget__header">
+						<h3 class="widget__title">메뉴 추가</h3>
+					</header>
+					<form>
+						<div class="widget__content">
+							<div class="sb-sidenav-footer">
+								<span id="resaBisName" th:text="${name}"></span>
+							</div>
+							<input type="text" class="input-text" id="meName" placeholder="추가할 메뉴 이름"  style="padding-left: 12px;"/>
+							<input type="text" class="input-text" id="mePrice" placeholder="가격"  style="padding-left: 12px;"/>
+							<textarea class="textarea" rows="6" id="meContent" placeholder="메뉴 소개" style="padding-left: 12px;display: none"></textarea>
+							<div style="width: 100%;">
+								<div style="text-align: right;">
+									<a href="/menuLookUp" class="btn cyan small" style="margin: 0;color: white">뒤로가기</a>
+									<a id="menuBtn" class="btn red small" style="margin: 0;color: white">메뉴추가</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</article>
+			</div>
+		</div>
+	</section>
+</div>
+<!--footer.html 시작-->
+<div th:replace="fragment/footer :: footer"></div>
+<!--footer.html 끝-->
+<script src="/js/menu.js"></script>
+</body>
+</html>

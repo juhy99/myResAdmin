@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<body>
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+	<div class="wrapper">
+		<!-- aside.html 시작 -->
+		<div th:replace="fragment/aside :: aside"></div>
+		<!-- aside.html 끝 -->
+		<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<article class="widget">
+					<div class="notice_container">
+						<div class="header-left">
+							<button class="btn-close" onclick = "location.href ='/notice'">닫기</button>
+						</div>
+					</div>				
+					<div class="widget__content notice">
+						<h2 style="    padding-bottom: 10px; font-size: 22px;" th:text="${content.noTitle}"></h2>
+						<p style="    color: #9a9a9a;">[캐치테이블 관리자]</p>
+						<p style="    color: #9a9a9a;" th:text="${content.regDate.getYear()}+'-'+${content.regDate.getMonthValue()}+'-'+${content.regDate.getDayOfMonth()}"></p>
+						<p class="notice_content" th:text="${content.noContent}"></p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+</div>
+<!--footer.html 시작-->
+<div th:replace="fragment/footer :: footer"></div>
+<!--footer.html 끝-->
+</body>
+</html>

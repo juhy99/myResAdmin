@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<!-- head.html -->
+<div th:replace="fragment/head :: head"></div>
+<!-- head.html 끝 -->
+<style>
+	.col-md-7 {
+		width:100%;
+	}
+</style>
+<body>
+<!-- header.html -->
+<div th:replace="fragment/header :: header"></div>
+<!-- header.html 끝-->
+<div class="wrapper">
+	<!-- aside.html 시작 -->
+	<div th:replace="fragment/aside :: aside"></div>
+	<!-- aside.html 끝 -->
+	<section class="content">
+		<div class="row">
+			<div class="col-md-7" style="max-width: 100%;flex: 100%">
+				<article class="widget widget--tabbed">
+					<div class="tabs">
+						<div  style="position: absolute;
+							height: 36px;
+							padding-left: 52px;
+							top: 11px;
+    						right: 0px;">
+							<input type="text" placeholder="공지사항 검색" id="msearch" style="    border: none;
+								background-color: transparent;
+								color: #e5e5e5;
+								font-size: 14px;
+								height: 36px;
+								line-height: 36px;
+								width: 355px;">
+							<label for="msearch" style="position: absolute;
+								color: #e5e5e5;
+								left: 18px;
+								top: 6px;
+								font-size: 22px;
+								cursor: pointer;">
+								<i class="pe-7s-search" style="font-weight: bold;
+									color: #9a9a9a;
+									font-size: 22px;"></i>
+							</label>
+						</div>
+						<a href="/resNoticeWrite" class="btn blue small" style="margin: 0; color: white;
+							position: absolute;
+							top: 12px;
+							right: 34px;
+							width: 114px;
+							height: 30px;
+							font-size: 12px;
+							margin-right: 19px;" th:href="@{/resNoticeWrite}" role="button">공지사항 등록</a>
+						<input type="radio" name="t" id="tab1" checked>
+						<label for="tab1" class="tabs__tab">공지사항</label>
+
+						<div class="widget__content">
+							<div class="media user user--added" th:each="post: ${postList}">
+								<div class="media-body">
+									<a th:href="@{'/resNoticeWrite/'+${post.binIdx}}"> <h4 class="media-heading user__name" th:text="${post.binTitle}"></h4></a>
+									<small class="user__location" style="padding-top: 2px;" th:text="${#temporals.format(post.updateDate, 'yyyy-MM-dd')}"></small>
+
+<!--									<a class="c-btn&#45;&#45;check"></a>-->
+<!--									<input type="checkbox" class="btn-more-check" id="more1">-->
+<!--									<label class="c-btn&#45;&#45;more" for="more1"></label>-->
+
+<!--									<div class="accordion__details">-->
+
+<!--										<p><span th:text="${post.binContent}"></span></p>-->
+
+<!--										<div style="width: 100%;">-->
+<!--											<div style="text-align: right;">-->
+<!--												<a href="/resNoticeWriteModify" class="btn cyan small" style="margin: 0;  color: white">공지수정</a>-->
+<!--												<a href="#" class="btn red small" style="margin: 0; color: white" >삭제하기</a>-->
+<!--											</div>-->
+<!--										</div>-->
+
+<!--									</div>-->
+								</div>
+							</div>
+						</div>
+				</article>
+			</div>
+		</div>
+	</section>
+	<footer class="main-footer">
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="amcharts/amcharts.js"></script>
+<script type="text/javascript" src="amcharts/serial.js"></script>
+<script type="text/javascript" src="amcharts/pie.js"></script>
+<script type="text/javascript" src="js/chart.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="jquery-jvectormap-1.2.2/jquery-jvectormap-us-aea-en.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+</html>
