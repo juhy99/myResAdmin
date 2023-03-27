@@ -22,7 +22,6 @@
 	<br>
 	<img src="https://img.shields.io/badge/Spring Boot-yellow?style=flat&logo=Spring Boot&logoColor=#6DB33F" />
 	<img src="https://img.shields.io/badge/MySQL-9cf?style=flat&logo=MySQL&logoColor=#4479A1" />
-	<img src="https://img.shields.io/badge/Spring Security -6DB33F?style=flat&logo=Spring Security&logoColor=white" />
   	<img src="https://img.shields.io/badge/JPA_Hibernate -59666C?style=flat&logo=Hibernate&logoColor=white" />
 	<img src="https://img.shields.io/badge/KakaoAPI -FFCD00?style=flat&logo=Kakao&logoColor=brown" />	
 </div>
