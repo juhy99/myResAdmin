@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=CatchTable&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Admin&descAlignY=51&descAlign=62)
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=CatchTable&fontSize=90&animation=fadeIn&fontAlignY=38&desc=ResAdmin&descAlignY=51&descAlign=62)
 
 
 <h4> 개발 기간 < 2022.12.05 ~ 2023.02.14 > </h4>
