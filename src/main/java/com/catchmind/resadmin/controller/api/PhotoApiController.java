@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/api/photo")    // http://3.38.50.114:8888/api/photo
+@RequestMapping("/api/photo")    // http://52.79.146.68:8888/api/photo
 @RequiredArgsConstructor
 public class PhotoApiController extends CrudController<PhotoApiRequest, PhotoApiResponse, Photo> {
 

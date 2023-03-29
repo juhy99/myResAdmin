@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 public class ReservationPageController {
 
     // 예약 내역 페이지
-    // http://3.38.50.114:8888/reservation
+    // http://52.79.146.68:8888/reservation
     @GetMapping(path = "reservation")
     public ModelAndView reservation(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -33,7 +33,7 @@ public class ReservationPageController {
     }
 
     // 예약 캘린더 페이지
-    // http://3.38.50.114:8888/reservationCalender
+    // http://52.79.146.68:8888/reservationCalender
     @GetMapping(path = "reservationCalender")
     public ModelAndView reservationCalender(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -53,7 +53,7 @@ public class ReservationPageController {
     }
 
     // 예약 취소 내역 페이지
-    // http://3.38.50.114:8888/reservationCancel
+    // http://52.79.146.68:8888/reservationCancel
     @GetMapping(path = "reservationCancel")
     public ModelAndView reservationCancel(HttpServletRequest request){
         HttpSession session = request.getSession(false);

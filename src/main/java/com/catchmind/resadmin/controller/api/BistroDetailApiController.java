@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/admin2")    // http://3.38.50.114:8888/api/admin2
+@RequestMapping("/api/admin2")    // http://52.79.146.68:8888/api/admin2
 @RequiredArgsConstructor
 public class BistroDetailApiController extends CrudController<BistroDetailApiRequest, BistroDetailApiResponse, BistroDetail> {
 
@@ -24,7 +24,7 @@ public class BistroDetailApiController extends CrudController<BistroDetailApiReq
         return bistroDetailApiLogicService.create(request);
     }
 
-//    @PostMapping("login") // http://3.38.50.114:8888/api/admin/login
+//    @PostMapping("login") // http://52.79.146.68:8888/api/admin/login
 //    public Header<BistroApiResponse> login(@RequestBody Header<BistroApiRequest> request) {
 //        return bistroApiLogicService.login(request);
 //    }

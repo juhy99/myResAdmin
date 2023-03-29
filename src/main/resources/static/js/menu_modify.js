@@ -25,7 +25,7 @@ function sendit(){
         return false;
     }
 
-    fetch('http://3.38.50.114:9999/api/menu', {
+    fetch('http://52.79.146.68:9999/api/menu', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -25,7 +25,7 @@ public class PageController {
     private final ReserveRepository reserveRepository;
 
     // 식당 관리자 메인페이지
-    // http://3.38.50.114:8888/index
+    // http://52.79.146.68:8888/index
     @GetMapping(path = "/")
     public ModelAndView index(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -52,7 +52,7 @@ public class PageController {
     }
 
     // 식당 일정 관리 캘린더
-    // http://3.38.50.114:8888/myCalander
+    // http://52.79.146.68:8888/myCalander
     @GetMapping(path = "myCalander")
     public ModelAndView myCalander(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -90,7 +90,7 @@ public class PageController {
     }
 
     //식당 정보 입력 페이지
-    // http://3.38.50.114:8888/mypage
+    // http://52.79.146.68:8888/mypage
     @GetMapping(path = "/mypage")
     public ModelAndView mypage(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -127,7 +127,7 @@ public class PageController {
         return new ModelAndView("photo").addObject("id", id).addObject("name",name);
     }
     //식당 상세정보 입력 페이지
-    // http://3.38.50.114:8888/mypage2
+    // http://52.79.146.68:8888/mypage2
     @GetMapping(path = "/mypage2")
     public ModelAndView mypage2(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -147,7 +147,7 @@ public class PageController {
     }
 
     //리뷰 조회 페이지
-    // http://3.38.50.114:8888/reviewLookUp
+    // http://52.79.146.68:8888/reviewLookUp
     @GetMapping(path = "reviewLookUp")
     public ModelAndView reviewLookUp(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -169,7 +169,7 @@ public class PageController {
     }
 
     // 매출 페이지
-    // http://3.38.50.114:8888/salesStatus
+    // http://52.79.146.68:8888/salesStatus
     @GetMapping(path = "salesStatus")
     public ModelAndView salesStatus(HttpServletRequest request){
         HttpSession session = request.getSession(false);

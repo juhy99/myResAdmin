@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/reviewLookUp")    // http://3.38.50.114:8888/api/reviewLookUp
+@RequestMapping("/api/reviewLookUp")    // http://52.79.146.68:8888/api/reviewLookUp
 @RequiredArgsConstructor
 public class ReviewApiController extends CrudController<ReviewApiRequest, ReviewApiResponse, Review> {
 
@@ -32,7 +32,7 @@ public class ReviewApiController extends CrudController<ReviewApiRequest, Review
         return reviewApiLogicService.create(request);
     }
 
-//    @PostMapping("login") // http://3.38.50.114:8888/api/admin/login
+//    @PostMapping("login") // http://52.79.146.68:8888/api/admin/login
 //    public Header<BistroApiResponse> login(@RequestBody Header<BistroApiRequest> request) {
 //        return bistroApiLogicService.login(request);
 //    }
@@ -50,7 +50,7 @@ public class ReviewApiController extends CrudController<ReviewApiRequest, Review
 
 
 
-    @GetMapping("") // http://3.38.50.114:8888/api/reviewLookUp?page=1
+    @GetMapping("") // http://52.79.146.68:8888/api/reviewLookUp?page=1
     public Header<List<ReviewApiResponse>> findAll(String resaBisName, HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String name;

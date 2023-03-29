@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/profile")    // http://3.38.50.114:8888/api/profile
+@RequestMapping("/api/profile")    // http://52.79.146.68:8888/api/profile
 @RequiredArgsConstructor
 public class ProfileApiController extends CrudController<ProfileApiRequest, ProfileApiResponse, Profile> {
     private final ProfileApiLogicService profileApiLogicService;

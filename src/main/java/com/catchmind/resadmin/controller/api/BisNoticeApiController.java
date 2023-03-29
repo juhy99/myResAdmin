@@ -12,7 +12,7 @@ import java.net.URLEncoder;
 import java.util.List;
 
 @Controller
-//@RequestMapping("/api/bisNotice")    // http://3.38.50.114:8888/api/menu
+//@RequestMapping("/api/bisNotice")    // http://52.79.146.68:8888/api/menu
 //@RequiredArgsConstructor      // private final BisNoticeApiLogicService bisNoticeApiLogicService;
 public class BisNoticeApiController {
 
@@ -83,7 +83,7 @@ public class BisNoticeApiController {
 //        return bisNoticeApiLogicService.create(request);
 //    }
 //
-//    @GetMapping("") // http://3.38.50.114:8888/api/menu?page=1
+//    @GetMapping("") // http://52.79.146.68:8888/api/menu?page=1
 //    public Header<List<BisNoticeApiResponse>> findAll(@PageableDefault(sort = {"binIdx"}, direction= Sort.Direction.DESC) Pageable pageable){
 //        return bisNoticeApiLogicService.search(pageable);
 //    }

@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")    // http://3.38.50.114:8888/api/
+@RequestMapping("/api")    // http://52.79.146.68:8888/api/
 @RequiredArgsConstructor
 public class ResAdminApiController extends CrudController<ResAdminApiRequest, ResAdminApiResponse, ResAdmin> {
 

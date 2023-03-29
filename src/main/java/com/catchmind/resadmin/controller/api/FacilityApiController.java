@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/api/facility")    // http://3.38.50.114:9999/api/facility
+@RequestMapping("/api/facility")    // http://52.79.146.68:9999/api/facility
 @RequiredArgsConstructor
 public class FacilityApiController extends CrudController<FacilityApiRequest, FacilityApiResponse, Facility> {
     private final FacilityApiLogicService facilityApiLogicService;

@@ -21,7 +21,7 @@ public class MenuPageController {
     @Autowired
     private MenuApiLogicService menuApiLogicService;
     // 메뉴 관리 페이지
-    // http://3.38.50.114:8888/menuLookUp
+    // http://52.79.146.68:8888/menuLookUp
     @GetMapping(path = "menuLookUp")
     public ModelAndView menuLookUp(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -41,7 +41,7 @@ public class MenuPageController {
     }
 
     // 메뉴 등록 페이지
-    // http://3.38.50.114:8888/menuLookUp/regMenu
+    // http://52.79.146.68:8888/menuLookUp/regMenu
     @GetMapping(path = "menuLookUp/regMenu")
     public ModelAndView regMenu(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -63,7 +63,7 @@ public class MenuPageController {
     }
 
     // 메뉴 수정 페이지
-    // http://3.38.50.114:8888/menuModify
+    // http://52.79.146.68:8888/menuModify
 
     @GetMapping("/menuModify/{meIdx}")
     public ModelAndView menuModify(@PathVariable Long meIdx) {
