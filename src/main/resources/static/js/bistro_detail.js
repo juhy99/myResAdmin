@@ -27,7 +27,7 @@ function sendit(){
         return false;
     }
 
-    fetch('http://localhost:9999/api/admin2', {
+    fetch('http://3.38.50.114:9999/api/admin2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

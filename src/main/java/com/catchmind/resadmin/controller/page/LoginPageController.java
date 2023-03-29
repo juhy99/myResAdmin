@@ -26,25 +26,25 @@ public class LoginPageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/index")
+        return new ModelAndView("index")
                 .addObject("id", id)
                 .addObject("name",name);
     }
     // 로그인 페이지
-    // http://localhost:8888/login
+    // http://3.38.50.114:8888/login
     @GetMapping(path = "login")
     public ModelAndView login(){
-        return new ModelAndView("/login");
+        return new ModelAndView("login");
     }
 
-    @PostMapping(path="loginOk")  // http://localhost:8888/loginOk
+    @PostMapping(path="loginOk")  // http://3.38.50.114:8888/loginOk
     public String loginOk(HttpServletRequest request, String resaUserid, String resaUserpw){
         if(resAdminApiLogicService.read(resaUserid,resaUserpw).getData()!= null) {
             HttpSession session = request.getSession();
@@ -64,7 +64,7 @@ public class LoginPageController {
     }
 
     // 비밀번호 찾기
-    // http://localhost:8888/passwordChange
+    // http://3.38.50.114:8888/passwordChange
     @GetMapping(path = "passwordChange")
     public ModelAndView passwordChange(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -73,18 +73,18 @@ public class LoginPageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/password_change");
+        return new ModelAndView("password_change");
     }
 
     // 초기값 비밀번호 변경 페이지
-    // http://localhost:8888/rePassword
+    // http://3.38.50.114:8888/rePassword
     @GetMapping(path = "rePassword")
     public ModelAndView rePassword(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -93,18 +93,18 @@ public class LoginPageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/re_password");
+        return new ModelAndView("re_password");
     }
 
     // 비밀번호 수정 페이지
-    // http://localhost:8888/myModify
+    // http://3.38.50.114:8888/myModify
     @GetMapping(path = "myModify")
     public ModelAndView myModify(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -113,14 +113,14 @@ public class LoginPageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/my_modify");
+        return new ModelAndView("my_modify");
     }
 
 }

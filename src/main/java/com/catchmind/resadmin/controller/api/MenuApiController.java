@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/menu")    // http://localhost:8888/api/menu
+@RequestMapping("/api/menu")    // http://3.38.50.114:8888/api/menu
 @RequiredArgsConstructor
 public class MenuApiController extends CrudController<MenuApiRequest, MenuApiResponse, Menu> {
 
@@ -29,7 +29,7 @@ public class MenuApiController extends CrudController<MenuApiRequest, MenuApiRes
         return menuApiLogicService.create(request);
     }
 
-//    @PostMapping("login") // http://localhost:8888/api/admin/login
+//    @PostMapping("login") // http://3.38.50.114:8888/api/admin/login
 //    public Header<BistroApiResponse> login(@RequestBody Header<BistroApiRequest> request) {
 //        return bistroApiLogicService.login(request);
 //    }
@@ -47,7 +47,7 @@ public class MenuApiController extends CrudController<MenuApiRequest, MenuApiRes
 
 
 
-    @GetMapping("") // http://localhost:8888/api/menu
+    @GetMapping("") // http://3.38.50.114:8888/api/menu
     public Header<List<MenuApiResponse>> findAll(String resaBisName, HttpServletRequest request){
         HttpSession session =request.getSession(false);
         String name;

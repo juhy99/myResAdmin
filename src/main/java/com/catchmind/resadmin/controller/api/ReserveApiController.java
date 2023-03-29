@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/reservation")    // http://localhost:8888/api/reserve
+@RequestMapping("/api/reservation")    // http://3.38.50.114:8888/api/reserve
 @RequiredArgsConstructor
 public class ReserveApiController extends CrudController<ReserveApiRequest, ReserveApiResponse, Reserve> {
     private final ReserveApiLogicService reserveApiLogicService;

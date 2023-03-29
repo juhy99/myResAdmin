@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/api/photo")    // http://localhost:8888/api/photo
+@RequestMapping("/api/photo")    // http://3.38.50.114:8888/api/photo
 @RequiredArgsConstructor
 public class PhotoApiController extends CrudController<PhotoApiRequest, PhotoApiResponse, Photo> {
 
@@ -56,6 +56,6 @@ public class PhotoApiController extends CrudController<PhotoApiRequest, PhotoApi
         String resaBisName = name;
         Long phIdx = photoApiLogicService.saveFile(resaBisName,file).get().getPhIdx();
         bistroInfoApiLogicService.updatephoto(phIdx,resaBisName);
-        return "redirect:/index";
+        return "redirect:/";
     }
 }

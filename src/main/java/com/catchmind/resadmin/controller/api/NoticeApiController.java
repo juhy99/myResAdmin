@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/notice")    // http://localhost:8888/api/notice
+@RequestMapping("/api/notice")    // http://3.38.50.114:8888/api/notice
 @RequiredArgsConstructor
 public class NoticeApiController extends CrudController<NoticeApiRequest, NoticeApiResponse, Notice> {
 
@@ -31,7 +31,7 @@ public class NoticeApiController extends CrudController<NoticeApiRequest, Notice
         return noticeApiLogicService.create(request);
     }
 
-//    @PostMapping("login") // http://localhost:8888/api/admin/login
+//    @PostMapping("login") // http://3.38.50.114:8888/api/admin/login
 //    public Header<BistroApiResponse> login(@RequestBody Header<BistroApiRequest> request) {
 //        return bistroApiLogicService.login(request);
 //    }
@@ -49,7 +49,7 @@ public class NoticeApiController extends CrudController<NoticeApiRequest, Notice
 
 
 
-    @GetMapping("") // http://localhost:8888/api/notice?page=1
+    @GetMapping("") // http://3.38.50.114:8888/api/notice?page=1
     public Header<List<NoticeApiResponse>> findAll(@PageableDefault(sort = {"noIdx"}, direction= Sort.Direction.DESC) Pageable pageable){
         return noticeApiLogicService.search(pageable);
     }

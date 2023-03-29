@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/status")    // http://localhost:8888/api/reviewLookUp
+@RequestMapping("/api/status")    // http://3.38.50.114:8888/api/reviewLookUp
 @RequiredArgsConstructor
 public class ShopResTableApiController extends CrudController<ShopResTableApiRequest, ShopResTableApiResponse, ShopResTable> {
     private final ShopResTableApiLogicService shopResTableApiLogicService;

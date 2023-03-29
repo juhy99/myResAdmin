@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/api/capacity")    // http://localhost:8888/api/capacity
+@RequestMapping("/api/capacity")    // http://3.38.50.114:8888/api/capacity
 @RequiredArgsConstructor
 public class CapacityApiController extends CrudController<CapacityApiRequest, CapacityApiResponse, TotalTable> {
     private final CapacityApiLogicService capacityApiLogicService;

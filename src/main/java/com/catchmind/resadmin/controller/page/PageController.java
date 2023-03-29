@@ -25,8 +25,8 @@ public class PageController {
     private final ReserveRepository reserveRepository;
 
     // 식당 관리자 메인페이지
-    // http://localhost:8888/index
-    @GetMapping(path = "index")
+    // http://3.38.50.114:8888/index
+    @GetMapping(path = "/")
     public ModelAndView index(HttpServletRequest request){
         HttpSession session = request.getSession(false);
         String id = null;
@@ -35,7 +35,7 @@ public class PageController {
         Integer done = 0;
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
@@ -48,11 +48,11 @@ public class PageController {
         System.out.println(name);
         Integer total = planned+done;
         Integer total_money = total*50000;
-        return new ModelAndView("/index").addObject("total",total).addObject("total_money",total_money);
+        return new ModelAndView("index").addObject("total",total).addObject("total_money",total_money);
     }
 
     // 식당 일정 관리 캘린더
-    // http://localhost:8888/myCalander
+    // http://3.38.50.114:8888/myCalander
     @GetMapping(path = "myCalander")
     public ModelAndView myCalander(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -61,14 +61,14 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/my_calander");
+        return new ModelAndView("my_calander");
     }
 
     @GetMapping(path = "re_password")
@@ -79,19 +79,19 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/re_password");
+        return new ModelAndView("re_password");
     }
 
     //식당 정보 입력 페이지
-    // http://localhost:8888/mypage
-    @GetMapping(path = "mypage")
+    // http://3.38.50.114:8888/mypage
+    @GetMapping(path = "/mypage")
     public ModelAndView mypage(HttpServletRequest request){
         HttpSession session =request.getSession(false);
         String id = null;
@@ -99,14 +99,14 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/mypage").addObject("id", id).addObject("name",name);
+        return new ModelAndView("mypage").addObject("id", id).addObject("name",name);
     }
 
     @GetMapping(path = "photo")
@@ -117,18 +117,18 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/photo").addObject("id", id).addObject("name",name);
+        return new ModelAndView("photo").addObject("id", id).addObject("name",name);
     }
     //식당 상세정보 입력 페이지
-    // http://localhost:8888/mypage2
-    @GetMapping(path = "mypage2")
+    // http://3.38.50.114:8888/mypage2
+    @GetMapping(path = "/mypage2")
     public ModelAndView mypage2(HttpServletRequest request){
         HttpSession session =request.getSession(false);
         String id = null;
@@ -136,18 +136,18 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/mypage2").addObject("id", id).addObject("name",name);
+        return new ModelAndView("mypage2").addObject("id", id).addObject("name",name);
     }
 
     //리뷰 조회 페이지
-    // http://localhost:8888/reviewLookUp
+    // http://3.38.50.114:8888/reviewLookUp
     @GetMapping(path = "reviewLookUp")
     public ModelAndView reviewLookUp(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -156,20 +156,20 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/reviewLookUp")
+        return new ModelAndView("reviewLookUp")
                 .addObject("id", id)
                 .addObject("name",name);
     }
 
     // 매출 페이지
-    // http://localhost:8888/salesStatus
+    // http://3.38.50.114:8888/salesStatus
     @GetMapping(path = "salesStatus")
     public ModelAndView salesStatus(HttpServletRequest request){
         HttpSession session = request.getSession(false);
@@ -178,14 +178,14 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/sales_status");
+        return new ModelAndView("sales_status");
     }
 
     @GetMapping(path = "capacity")
@@ -196,14 +196,14 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/capacity");
+        return new ModelAndView("capacity");
     }
     @GetMapping(path = "facility")
     public ModelAndView facility(HttpServletRequest request){
@@ -213,7 +213,7 @@ public class PageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
@@ -222,7 +222,7 @@ public class PageController {
         }
         name = (String)session.getAttribute("name");
         String resaBisName = name;
-        ModelAndView view = new ModelAndView("/facility");
+        ModelAndView view = new ModelAndView("facility");
         Header<FacilityApiResponse> fac = facilityApiLogicService.find(resaBisName);
         System.out.println(fac.getData());
         view.addObject("fac",fac.getData());

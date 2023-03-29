@@ -3,7 +3,7 @@ function deleteIt(){
     const meIdx = document.getElementById("meIdx").innerText;
     console.log(meIdx)
 
-    fetch('http://localhost:9999/api/menu/'+ meIdx, {
+    fetch('http://3.38.50.114:9999/api/menu/'+ meIdx, {
         method: 'DELETE',
     })
         .then((res) => {

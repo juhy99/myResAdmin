@@ -18,29 +18,10 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("")
 public class MenuPageController {
 
-    //    @GetMapping("regMenu")
-//    public ModelAndView index2(HttpServletRequest request) {
-//        HttpSession session =request.getSession(false);
-//        String id = null;
-//        String name = null;
-//
-//        if(session == null){
-//            System.out.println("세션이 없습니다.");
-//            return new ModelAndView("/login");
-//
-//        }else{
-//            id = (String)session.getAttribute("id");
-//            name = (String)session.getAttribute("name");
-//            System.out.println("세션이 있습니다.");
-//        }
-//        return new ModelAndView("/reg_menu")
-//                .addObject("id", id)
-//                .addObject("name",name);
-//    }
     @Autowired
     private MenuApiLogicService menuApiLogicService;
     // 메뉴 관리 페이지
-    // http://localhost:8888/menuLookUp
+    // http://3.38.50.114:8888/menuLookUp
     @GetMapping(path = "menuLookUp")
     public ModelAndView menuLookUp(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -49,18 +30,18 @@ public class MenuPageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/menuLookUp");
+        return new ModelAndView("menuLookUp");
     }
 
     // 메뉴 등록 페이지
-    // http://localhost:8888/menuLookUp/regMenu
+    // http://3.38.50.114:8888/menuLookUp/regMenu
     @GetMapping(path = "menuLookUp/regMenu")
     public ModelAndView regMenu(HttpServletRequest request){
         HttpSession session =request.getSession(false);
@@ -69,20 +50,20 @@ public class MenuPageController {
 
         if(session == null){
             System.out.println("세션이 없습니다.");
-            return new ModelAndView("/login");
+            return new ModelAndView("login");
 
         }else{
             id = (String)session.getAttribute("id");
             name = (String)session.getAttribute("name");
             System.out.println("세션이 있습니다.");
         }
-        return new ModelAndView("/reg_menu")
+        return new ModelAndView("reg_menu")
                 .addObject("id", id)
                 .addObject("name",name);
     }
 
     // 메뉴 수정 페이지
-    // http://localhost:8888/menuModify
+    // http://3.38.50.114:8888/menuModify
 
     @GetMapping("/menuModify/{meIdx}")
     public ModelAndView menuModify(@PathVariable Long meIdx) {
